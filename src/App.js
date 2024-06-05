@@ -8,13 +8,13 @@ import Contact from "./components/Contact";
 function App() {
   return (
     <div>
-      <NavBar />
+      <NavBar/>
       <Home />
       <About/>
       <Portfolio/>
       <Experience/>
       <Contact/>
-
+      
       <SocilaLinks/>
     </div>
   );
