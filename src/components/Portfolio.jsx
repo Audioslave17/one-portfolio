@@ -3,32 +3,43 @@ import chiranjeevi from '../assets/portfolio/chiranjeevi.jpg'
 import mastgulla from '../assets/portfolio/mastgulla.png'
 import social from '../assets/portfolio/social.png'
 import tripti from '../assets/portfolio/tripti.jpg'
+import { useNavigate } from 'react-router-dom'
+
 const Portfolio = () => {
+  const navigate = useNavigate();
   const portfolios = [
     {
       id: 1,
       src: social,
-      repoUrl: 'https://github.com/Audioslave17/SocialSphere'
+      repoUrl: 'https://github.com/Audioslave17/SocialSphere',
+      goto : '/social'
     },
     {
       id: 2,
       src: chiranjeevi,
-      repoUrl: 'https://github.com/sparshgupta121/Techack-4.0'
+      repoUrl: 'https://github.com/sparshgupta121/Techack-4.0',
+      goto : '/chiran'
     },
     {
       id: 3,
       src: tripti,
-      repoUrl: 'https://github.com/sparshgupta121/Tripti-Foundation'
+      repoUrl: 'https://github.com/sparshgupta121/Tripti-Foundation',
+      goto : '/trip'
     },
     {
       id: 4,
       src: mastgulla,
-      repoUrl: 'https://github.com/Audioslave17/Mastgulla'
+      repoUrl: 'https://github.com/Audioslave17/Mastgulla',
+      goto : '/mast'
     }
   ]
 
   const handleRepoClick = (url) =>{
     window.location.href = url;
+  }
+
+  const aboutgo = (url) => {
+    navigate(url);
   }
 
   return (
@@ -41,11 +52,11 @@ const Portfolio = () => {
 
         <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0'>
           {
-            portfolios.map(({id,src,repoUrl}) => (
+            portfolios.map(({id,src,repoUrl,goto}) => (
               <div key={id} className='shadow-md shadow-gray-600 rounded-lg'>
                 <img src={src} alt="" className='rounded-md hover:scale-105 duration-200' />
               <div className='flex items-center justify-center'>
-                <button className='w-1/2 px-6 py-1 m-4 hover:scale-105 duration-200'>About</button>
+                <button className='w-1/2 px-6 py-1 m-4 hover:scale-105 duration-200' onClick={()=>aboutgo(goto)}>About</button>
                 <button className='w-1/2 px-6 py-1 m-4 hover:scale-105 duration-200' onClick={()=>handleRepoClick(repoUrl)}>Repo</button>
               </div>
             </div>
