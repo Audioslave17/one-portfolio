@@ -10,9 +10,9 @@ const Contact = () => {
             </div>
             <div className='flex justify-center items-center'>
                 <form action="https://getform.io/f/panvmopa" method='POST' className='flex flex-col w-full md:w-1/2'>
-                    <input type="text" name="name" placeholder='Enter Your Name' className='p-2 bg-transparent border-2 rounded-md text-white focus:outline-none'/>
-                    <input type="text" name="email" placeholder='Enter Your Email' className='p-2 my-4 bg-transparent border-2 rounded-md text-white focus:outline-none'/>
-                    <textarea name="message" rows="10" className='p-2 bg-transparent border-2 rounded-md text-white focus:outline-none' placeholder='Enter your Text'></textarea>
+                    <input type="text" name="name" required placeholder='Enter Your Name' className='p-2 bg-transparent border-2 rounded-md text-white focus:outline-none'/>
+                    <input type="text" name="email" required placeholder='Enter Your Email' className='p-2 my-4 bg-transparent border-2 rounded-md text-white focus:outline-none'/>
+                    <textarea name="message" rows="10" required maxLength={500} className='p-2 bg-transparent border-2 rounded-md text-white focus:outline-none' placeholder='Enter your Text'></textarea>
                     <button className='text-white bg-gradient-to-b from-cyan-500 to-blue-500 px-6 py-3 mx-auto my-8 flex items-center rounded-md hover:scale-110 duration-300'>Let's Talk</button>
                 </form>
             </div>
